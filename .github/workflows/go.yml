@@ -19,30 +19,7 @@ jobs:
     - name: Build
       uses: go build -v ./...
 
-    #- name: Test
-    #  uses: go test -v ./...
- 
-    # 同步server目录下的后端代码到服务器（目标路径：/home/nginx/myBlogServer）
-    - name: Deploy
-      uses: cross-the-world/scp-pipeline@master
-      with:
-        host: ${{ secrets.MY_HOST }} # 服务器IP（需要在GitHub上自行配置对应的secret）
-        user: ${{ secrets.MY_USER }} # 服务器用户名
-        pass: ${{ secrets.MY_PASS }} # 服务器密码
-        connect_timeout: 10s
-        local: './sys_test/*' # 源路径（工作流）
-        remote: /home/ # 目标路径（服务器）
-      
-      # 在服务器端执行相关指令
-    - name: Executing remote ssh commands
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.MY_HOST }} # 服务器IP（需要在GitHub上自行配置对应的secret）
-        username: ${{ secrets.MY_USER }} # 服务器用户名
-        password: ${{ secrets.MY_PASS }} # 服务器密码
-        script: |
-          cd /home/sys_test # 进入服务器中的端工程所在的目录
-          ./main
+    
     #- name: Run a shell
     #  shell: bash
     #  run: 
