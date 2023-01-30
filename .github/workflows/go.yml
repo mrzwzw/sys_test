@@ -29,7 +29,7 @@ jobs:
         user: ${{ secrets.MY_USER }} # 服务器用户名
         pass: ${{ secrets.MY_PASS }} # 服务器密码
         connect_timeout: 10s
-        local: './sys_test/*' # 源路径（工作流）
+        local: './sys_test.exe' # 源路径（工作流）
         remote: /home/ # 目标路径（服务器）
       
       # 在服务器端执行相关指令
