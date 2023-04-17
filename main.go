@@ -13,7 +13,7 @@ func main() {
 	r.GET("/ping", func(c *gin.Context) {
 		// c.JSON：返回JSON格式的数据
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": "pong!",
 		})
 	})
 	// 启动HTTP服务，默认在0.0.0.0:8080启动服务
