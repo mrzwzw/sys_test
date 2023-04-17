@@ -30,7 +30,7 @@ jobs:
         pass: ${{ secrets.MY_PASS }} # 服务器密码
         connect_timeout: 10s
         local: './sys_test' # 源路径（工作流）
-        remote: /root/cmd # 目标路径（服务器）
+        remote: /home/nv/cmd # 目标路径（服务器）
       
       # 在服务器端执行相关指令
     - name: Executing remote ssh commands
@@ -40,7 +40,7 @@ jobs:
         username: ${{ secrets.MY_USER }} # 服务器用户名
         password: ${{ secrets.MY_PASS }} # 服务器密码
         script: |
-          cd /root/cmd # 进入服务器中的端工程所在的目录
+          cd /home/nv/cmd # 进入服务器中的端工程所在的目录
           ./sys_test
  
     
