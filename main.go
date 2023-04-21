@@ -9,7 +9,7 @@ func main() {
 	//
 	// func WriteFile(name string, data []byte, perm FileMode) error
 
-	str := "hi world !!!!!!!!!"
+	str := "hi world ."
 	err := os.WriteFile("./hello", []byte(str), 0666)
 	if err != nil {
 		// handle error
